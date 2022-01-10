@@ -4,9 +4,6 @@
     become: yes
     become_user: root
     tasks:
-#      - name: check if package is installed and store in variable
-#        shell: rpm -q httpd|grep 'not installed'
-#        register: is_installed
 
       - name: ensure apache is at the latest version
         yum:
@@ -16,8 +13,3 @@
         service:
           name: httpd
           state: started
-
-      - name: create file
-        template:
-          src: /root/git/ansible/templates/index.html
-          dest: /var/www/html
