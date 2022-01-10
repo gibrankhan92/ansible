@@ -4,9 +4,9 @@
     become: yes
     become_user: root
     tasks:
-      - name: check if package is installed and store in variable
-        shell: rpm -q httpd|grep 'not installed'
-        register: is_installed
+#      - name: check if package is installed and store in variable
+#        shell: rpm -q httpd|grep 'not installed'
+#        register: is_installed
 
       - name: ensure apache is at the latest version
         yum:
